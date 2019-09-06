@@ -1,29 +1,65 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <Nav :shopItems="shopItems"></Nav>
+    <router-view :shopItems="shopItems" />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import Nav from "../src/components/Nav.vue";
+export default {
+  components: {
+    Nav
+  },
+  data() {
+    return {
+      shopItems: [
+        {
+          itemImage:
+            "https://4.imimg.com/data4/CO/YS/MY-29352968/samsung-desktop-computer-500x500.jpg",
+          itemTitle: "computer",
+          itemPrice: 2000,
+          itemDescription: "really nice computer",
+          itemAmount: 1
+        },
+        {
+          itemImage:
+            "https://www.razor.com/wp-content/uploads/2018/01/A_CL_Product.png",
+          itemTitle: "scooter",
+          itemPrice: 1234,
+          itemDescription: "really nice scooter",
+          itemAmount: 3
+        },
+        {
+          itemImage:
+            "https://www.razor.com/wp-content/uploads/2018/01/A_CL_Product.png",
+          itemTitle: "phone",
+          itemPrice: 34534,
+          itemDescription: "really nice phone",
+          itemAmount: 2
+        },
+        {
+          itemImage:
+            "https://www.razor.com/wp-content/uploads/2018/01/A_CL_Product.png",
+          itemTitle: "desk",
+          itemPrice: 34,
+          itemDescription: "really nice desk",
+          itemAmount: 1
+        }
+      ]
+    };
   }
+};
+</script>
+
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
 }
 </style>

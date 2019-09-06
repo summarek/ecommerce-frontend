@@ -1,18 +1,46 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="grid">
+      <Item
+        class="grid__item"
+        v-for="Item in myShopItems"
+        :key="Item.itemName"
+        :Item="Item"
+      ></Item>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Item from "../components/Item";
 
 export default {
   name: "home",
+  props: {
+    shopItems: {
+      type: Array
+    }
+  },
   components: {
-    HelloWorld
+    Item
+  },
+  data() {
+    return {
+      myShopItems: this.shopItems
+    };
+  },
+  mounted() {
+    console.log(this.myShopItems);
   }
 };
 </script>
+<style lang="scss" scoped>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 1rem;
+  justify-content: center;
+  align-content: center;
+  margin-top: 2rem;
+}
+</style>
