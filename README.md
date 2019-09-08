@@ -30,3 +30,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 # ecommerce-frontend
 "# ecommerce-frontend"  git init git add README.md git commit -m "first commit" git remote add origin https://github.com/summarek/ecommerce-frontend.git git push -u origin master
 "# ecommerce-frontend" 
+"# ecommerce-frontend"  git init git add README.md git commit -m "first commit" git remote add origin https://github.com/summarek/ecommerce-frontend.git git push -u origi

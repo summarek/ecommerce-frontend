@@ -30,7 +30,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.myShopItems);
+    // console.log(this.myShopItems);
   }
 };
 </script>

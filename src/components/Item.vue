@@ -6,13 +6,14 @@
 
     <md-card-header>
       <div class="md-title">{{ Item.itemTitle }}</div>
+      <div class="md-subtitle">${{ Item.itemPrice }}</div>
     </md-card-header>
 
     <md-card-expand>
       <md-card-actions md-alignment="space-between">
         <div>
           <md-button class="md-dense md-raised md-primary">Buy now!</md-button>
-          <md-button class="md-dense md-raised md-primary"
+          <md-button @click="addToBasket" class="md-dense md-raised md-primary"
             >Add to basket</md-button
           >
         </div>
@@ -38,10 +39,17 @@
 </template>
 
 <script>
+import { EventBus } from "../main";
+
 export default {
   props: {
     Item: {
       type: Object
+    }
+  },
+  methods: {
+    addToBasket() {
+      EventBus.$emit("addedToBasket", this.Item);
     }
   }
 };

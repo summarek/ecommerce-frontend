@@ -7,6 +7,8 @@ import "vue-material/dist/theme/default.css";
 
 Vue.use(VueMaterial);
 
+export const EventBus = new Vue();
+
 Vue.config.productionTip = false;
 
 new Vue({
